@@ -41,8 +41,7 @@ message GreetResponse {
 service ClientTestService {
   rpc Echo(EchoRequest) returns (EchoResponse) {
     option (google.api.http) = {
-      post: "/apiv1/client_test_service/echo"
-      body: "*"
+      get: "/apiv1/client_test_service/echo"
     };
     option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
       summary: "Echo"

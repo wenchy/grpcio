@@ -25,7 +25,8 @@ install: `bash ./tools/install.sh`
 3. Start **flyio**: `./flyio -conf=./conf.yaml`
 
 ### gRPC-Gateway
-Echo: `curl --data '{"msg": "hello"}' -H "Content-Type: application/json"   http://127.0.0.1:8080/apiv1/client_test_service/echo`
+1. Echo: `curl http://127.0.0.1:8080/apiv1/client_test_service/echo` 
+2. Greet: `curl --data '{"msg": "hello"}' -H "Content-Type: application/json"   http://127.0.0.1:8080/apiv1/client_test_service/echo`
 
 ### ReDoc
 Browser URL: http://127.0.0.1:8081/docs/

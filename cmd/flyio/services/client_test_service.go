@@ -20,7 +20,7 @@ func NewClientTestService() *ClientTestService {
 // Echo transfer back the request.
 func (s *ClientTestService) Echo(ctx context.Context, req *corepb.EchoRequest) (*corepb.EchoResponse, error) {
 	rsp := &corepb.EchoResponse{
-		Msg: req.Msg,
+		Msg: "Hello Echo",
 	}
 	return rsp, nil
 }
