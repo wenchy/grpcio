@@ -1,0 +1,64 @@
+syntax = "proto3";
+package core;
+
+// Defines the import path that should be used to import the generated package,
+// and the package name.
+option go_package = "github.com/wenchy/grpcio/internal/corepb";
+
+import "google/api/annotations.proto";
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+// These annotations are used when generating the OpenAPI file.
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+  info: {
+    version: "1.0";
+  };
+  external_docs: {
+    url: "https://github.com/wenchy/grpcio";
+    description: "wenchy/grpcio repository";
+  }
+  schemes: HTTPS;
+};
+
+message EchoRequest {
+  string msg = 1;
+}
+
+message EchoResponse {
+  string msg = 1;
+}
+
+message GreetRequest {
+  string name = 1;
+  uint32 age = 2;
+}
+  
+message GreetResponse {
+  string name = 1;
+  uint32 age = 2;
+}
+
+service ClientTestService {
+  rpc Echo(EchoRequest) returns (EchoResponse) {
+    option (google.api.http) = {
+      post: "/apiv1/client_test_service/echo"
+      body: "*"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      summary: "Echo"
+      description: "Echo test."
+      tags: "test"
+    };
+  }
+  rpc Greet(GreetRequest) returns (GreetResponse) {
+    option (google.api.http) = {
+      post : "/apiv1/client_test_service/greet"
+      body : "*"
+    };
+    option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_operation) = {
+      summary : "Greet"
+      description : "Prepare to others."
+      tags : "test"
+    };
+  }
+}

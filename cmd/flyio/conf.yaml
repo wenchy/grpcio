@@ -1,0 +1,8 @@
+server:
+  grpc_address: :8880
+  gateway_address: :8080
+  http_address: :8081
+log:
+  level: debug
+  dir: ./logs
+

@@ -1,0 +1,40 @@
+syntax = "proto3";
+package core;
+
+// Defines the import path that should be used to import the generated package,
+// and the package name.
+option go_package = "github.com/wenchy/grpcio/internal/corepb";
+
+import "protoc-gen-openapiv2/options/annotations.proto";
+
+// These annotations are used when generating the OpenAPI file.
+option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
+   info: {
+     version: "1.0";
+   };
+   external_docs: {
+     url: "https://github.com/wenchy/grpcio";
+     description: "wenchy/grpcio repository";
+   }
+   schemes: HTTPS;
+ };
+
+ enum Code {
+    SUCCESS = 0;
+
+    // system error: [-9999, 0)
+    ERR_SYSTEM = -1;
+    ERR_NOT_EXIST = -2;
+    ERR_ALREADY_EXIST = -3;
+    ERR_UNIMPLEMENTED = -4;
+    ERR_ILLEGAL_CONF = -5;
+    ERR_CONF_MISSING = -6;
+    ERR_UNKNOWN = -7;
+    ERR_REDIS = -8;
+    ERR_MYSQL = -9;
+    ERR_PROTOBUF = -10;
+    ERR_VERSION = -11;
+
+    // business error: [1, 9999)
+    ERR_ILLEGAL_REQUEST = 1;
+ }

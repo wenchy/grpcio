@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Home page</title>
+    <!-- needed for adaptive design -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+    <h2>RESTful API</h2>
+    {{ range .Docs }}
+    <h4><a href="{{ .Path }}">{{ .Name }}</a></h4>
+    {{ end }}
+</body>
+
+</html>
