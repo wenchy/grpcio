@@ -8,7 +8,7 @@ A basic gRPC server with middlewares, gRPC-Gateway, ReDoc, etc..
 
 refer: [protobuf v3.17.3](https://github.com/protocolbuffers/protobuf/tree/v3.17.3)
 
-install: 
+install:
 1. Download [protobuf release v3.17.3](https://github.com/protocolbuffers/protobuf/releases/tag/v3.17.3), and install it by README.
 2. Build from source.
 
@@ -25,11 +25,11 @@ install: `bash ./tools/install.sh`
 3. Start **flyio**: `./flyio -conf=./conf.yaml`
 
 ### gRPC-Gateway
-1. Echo: `curl http://127.0.0.1:8080/apiv1/client_test_service/echo` 
+1. Echo: `curl http://127.0.0.1:8080/apiv1/client_test_service/echo`
 2. Greet: `curl --data '{"msg": "hello"}' -H "Content-Type: application/json"   http://127.0.0.1:8080/apiv1/client_test_service/echo`
 
 ### ReDoc
-Browser URL: http://127.0.0.1:8081/docs/
+Browser URL: http://127.0.0.1:8081/docs/index
 
 ## Git
 ### Commits
